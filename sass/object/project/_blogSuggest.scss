@@ -1,0 +1,69 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.p-blogSuggest {
+    
+    .suggestTitle {
+        font: normal normal bold 26px/39px "YuGothic";
+        margin-bottom: 30px;
+    }
+
+    .relatedList {
+
+        li {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 28px;
+
+            @include min.breakpoint(tablet) {
+                flex-direction: row;
+            }
+
+            picture {
+                display: block;
+                position: relative;
+                width: 210px;
+                height: 120px;
+                margin-bottom: 10px;
+
+                @include min.breakpoint(tablet) {
+                    margin-right: 32px;
+                }
+    
+                img {
+                    width: inherit;
+                    height: inherit;
+                }
+    
+                .category {
+                    display: inline-block;
+                    background-color: var.$bg-main;
+                    color: var.$text-white;
+                    padding: .3rem .6rem;
+                    position: absolute;
+                    font: normal normal 500 12px/12px "YuGothic";
+    
+                    @include min.breakpoint(tablet) {
+                        padding: .5rem 1rem;
+                    }
+                }
+            }
+
+            .relatedContent {
+
+                .relatedDate {
+                    margin-bottom: 10px;
+                    font: normal normal 500 16px/29px 'YuGothic';
+
+                    @include min.breakpoint(tablet) {
+                        margin-bottom: 30px;
+                    }
+                }
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

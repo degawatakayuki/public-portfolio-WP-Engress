@@ -1,0 +1,125 @@
+@use "../../foundation/mixins" as min;
+@use "../../foundation/variables" as var;
+
+.p-advantage {
+
+    margin-top: 59px;
+    margin-bottom: 39px;
+    
+    h2 {
+
+        text-align: center;
+        margin-bottom: 59px;
+    }
+    
+    .advantageContainer {
+
+        display: block;
+        width: 100%;
+        position: relative;
+        
+        .advantageContents {
+
+            height: 350px;
+            
+            @include min.breakpoint(tablet) {
+
+                height: auto;
+                margin-bottom: 60px;
+            }
+        }
+
+        @include min.breakpoint(tablet) {
+
+            max-width: 1280px;
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    .fillter-sp {
+
+        display: block;
+        width: 100%;
+        position: absolute;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        height: 1050px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 500px;
+        z-index: 100;
+
+        @include min.breakpoint(tablet)  {
+
+            display: none;
+        }
+    }
+
+    .plan {
+
+        display: block;
+        margin-top: 93px;
+        text-align: center;
+        height: 217px;
+        position: relative;
+        width: 100%;
+
+        @include min.breakpoint(tablet) {
+
+            width: unset;
+        }
+
+
+        picture {
+
+            width: 100%;
+            height: 100%;
+
+            img {
+
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .planContent {
+
+            width: 100%;
+            position: absolute;
+            top: 20%;
+
+            @include min.breakpoint(tablet) {
+
+                top: 25%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .planTitle {
+
+                color: var.$text-white;
+
+                @include min.breakpoint(tablet) {
+                    width: 100%;
+                }
+            }
+
+            a {
+                
+                display: inline-block;
+                border: 1px solid var.$text-white;
+                color: var.$text-white;
+                padding: 16px 44px;
+                border-radius: 50px;
+                margin-top: 27px;
+                font-weight: bold;
+
+                &:hover {
+                    background-color: var.$bg-white;
+                    color: var.$text-main;
+                }
+            }
+        }
+    }
+}

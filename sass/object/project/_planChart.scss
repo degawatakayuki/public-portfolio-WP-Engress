@@ -1,0 +1,31 @@
+@use "../../foundation/mixins" as min;
+.p-planChart {
+    margin-bottom: 62px;
+    
+    .planChartContainer {
+
+        .chartTitle {
+            text-align: center;
+            font: normal normal bold 32px/54px "YuGothic";
+            margin-bottom: 40px;
+
+            @include min.breakpoint(tablet) {
+                margin-bottom: 70px;
+            }
+        }
+
+        .chartContents {
+            display: flex;
+            overflow-x: scroll;
+            flex-wrap: nowrap;
+
+            @include min.breakpoint(pc) {
+                justify-content: center;
+            }
+
+            @include min.breakpoint(pc) {
+                overflow-x: unset;
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+@use "../foundation/mixins" as min;
+
+body {
+    font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "Noto Sans JP", sans-serif;
+    * {
+        box-sizing: border-box;
+        color: #1B224C;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #1B224C;
+    font: normal normal 500 16px/27px "YuGothic";
+    margin: 0;
+    padding: 0;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    object-fit: cover;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+}
+
+.inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 95%;
+
+    @include min.breakpoint(tablet) {
+        width: 90%;
+    }
+}
+
+p {
+    font: normal normal 500 16px/27px "YuGothic";
+}
+
+.br-sp {
+    display: block;
+
+    @include min.breakpoint(tablet) {
+        display: none;
+    }
+}
+
+.br-pc {
+    display: none;
+
+    @include min.breakpoint(pc) {
+        display: block;
+    }
+}
+
+.br-md {
+    display: none;
+
+    @include min.breakpoint(tablet) {
+        display: block;
+    }
+}
+
+h2 {
+    font: normal normal bold 26px/38px "YuGothic";
+
+    @include min.breakpoint(tablet) {
+        font: normal normal bold 36px/50px "YuGothic";
+    }
+}
+
+h3 {
+    font: normal normal bold 24px/35px "YuGothic";
+
+    @include min.breakpoint(pc) {
+        font: normal normal bold 26px/39px "YuGothic";
+    }
+}
+
+input[type="checkbox"] {
+    margin: 0; 
+    padding: 0;
+}

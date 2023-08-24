@@ -1,0 +1,46 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.p-mainVisual {
+
+    width: 100%;
+    height: auto;
+    background-image: url("../img/fv.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 70% top;
+    margin-top: 80px;
+
+    .mainVisualContainer {
+
+        text-align: center;
+        padding-top: 80px;
+        padding-bottom: 48px;
+
+        @include min.breakpoint(tablet) {
+            padding-top: 116px;
+            padding-bottom: 86px;
+        }
+        
+        h1 {
+            font: normal normal bold 32px/54px YuGothic;
+            color: var.$text-white;
+            margin-bottom: 28px;
+
+            @include min.breakpoint(tablet) {
+                font: normal normal bold 48px/65px YuGothic;
+            }
+        }
+
+        p {
+            font: normal normal 500 18px/31px "YuGothic";
+            color: var.$text-white;
+            margin-bottom: 50px;
+        }
+
+        & > a {
+            color: var.$text-white;
+            text-decoration: underline;
+        }
+    }
+}

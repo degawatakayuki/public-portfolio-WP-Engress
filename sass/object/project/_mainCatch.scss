@@ -1,0 +1,95 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.p-mainCatch{
+
+    background-color: var.$bg-main;
+    padding-top: 63px;
+    padding-bottom: 54px;
+    text-align: center;
+
+    .catchContainer {
+        
+        .catchTitle {
+            color: var.$text-white;
+            margin-bottom: 65px;
+        }
+
+        .worriesContents {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 83px;
+
+            @include min.breakpoint(tablet) {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            @include min.breakpoint(pc) {
+                width: 7      0%;
+                margin: 0 auto 83px;
+            }
+
+            .worriesText {
+                color: var.$text-white;
+                line-height: 2;
+                font: normal normal bold 18px/39px "YuGothic";
+            }
+        }
+
+        .catchBlock {
+            width: 100%;
+            background-color: var.$bg-white;
+            padding: 10px;
+
+            @include min.breakpoint(tablet) {
+                padding: 20px;
+            }
+
+            .catchContents {
+                padding: 15px 10px;
+                border: 3px solid var.$text-main;
+
+                @include min.breakpoint(tablet) {
+                    padding: 15px 20px;
+                    border: 5px solid var.$text-main;
+                }
+
+                & > h2 {
+                    margin-bottom: 25px;
+
+                    & > span  {
+                        font: normal normal bold 24px/32px "YuGothic";
+                        display: inline-block; 
+                        line-height: 1;
+                        text-decoration-color: var.$bg-accent;
+                        text-decoration-line: underline;
+                        text-decoration-thickness: 6px;
+                        text-underline-offset: -4px;
+                        text-decoration-skip-ink: none;
+                        // background: linear-gradient(transparent 65%, var.$bg-accent 10%);
+
+                        @include min.breakpoint(tablet) {
+                            font: normal normal bold 36px/50px "YuGothic";
+
+                            text-decoration-color: var.$bg-accent;
+                            text-decoration-line: underline;
+                            text-decoration-thickness: 10px;
+                            text-underline-offset: -8px;
+                            text-decoration-skip-ink: none;
+                        }
+                    }
+                }
+
+                & > p {
+                    margin-bottom: 15px;
+                    font: normal normal 500 16px/28px "YuGothic";
+
+                    @include min.breakpoint(tablet) {
+                        font: normal normal 500 18px/31px "YuGothic";
+                    }  
+                }
+            }
+        }
+    }
+}

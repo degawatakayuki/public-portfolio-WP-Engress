@@ -1,0 +1,52 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.c-pager {
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .pagerContainer {
+
+        .wp-pagenavi {
+
+            display: flex;
+            justify-content: center;
+
+            .page, .current,.first, .last {
+
+                padding: 10px 15px;
+                margin-right: 10px;
+                border: 1px solid #1B224C;
+                font-weight: bold;
+
+                @include min.breakpoint(tablet) {
+                    margin-right: 19px;
+                }
+            }
+
+            .extend {
+                
+                padding: 10px 15px;
+                font-weight: bold;
+                border: none;
+
+                @include min.breakpoint(tablet) {
+                    margin-right: 19px;
+                }
+            }
+
+            .current {
+                background: #1B224C;
+                color: var.$text-white;
+            }
+            
+            .last {
+                margin-right: unset;
+            }
+            .pages, .nextpostslink, .previouspostslink {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,3 @@
+new ScrollHint('.js-scrollable');
+
+

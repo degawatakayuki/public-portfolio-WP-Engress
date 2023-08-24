@@ -1,0 +1,36 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.p-blogDetail {
+    margin-bottom: 60px;
+    width: 100%;
+
+    .category {
+        display: inline-block;
+        color: var.$text-white;
+        background-color: var.$bg-main;
+        padding: .5rem 1rem;
+        margin-bottom: 30px;
+        font: normal normal 500 12px/20px 'YuGothic';
+    }
+    
+    h1 {
+        font: normal normal bold 28px/42px "YuGothic";
+        margin-bottom: 25px;
+    }
+
+    .snsBtns {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        flex-direction: column-reverse;
+
+        @include min.breakpoint(tablet) {
+            flex-direction: row;
+        }
+
+        .wp_social_bookmarking_light {
+            padding: unset;
+        }
+    }
+}

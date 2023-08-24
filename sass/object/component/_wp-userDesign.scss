@@ -1,0 +1,262 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.c-wp-userDesign {
+    width: 100%;
+
+    h1, h2, h3, h4, h5, h6, p, div, blockquote, table, dl {
+
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    //見出し
+    & > h1 {
+        font: normal normal bold 28px/42px "YuGothic";
+    }
+
+    & > h2 {
+        font: normal normal bold 26px/39px "YuGothic";
+    }
+
+    & > h3 {
+        font: normal normal bold 22px/33px "YuGothic";
+        border-left: 5px solid var.$bg-main;
+        padding-left: 10px;
+    }
+
+    & > h4 {
+        font: normal normal bold 20px/30px "YuGothic";
+    }
+
+    & > h5 {
+        font: normal normal bold 18px/28px "YuGothic";
+    }
+
+    & > h6 {
+        font: normal normal bold 16px/24px "YuGothic";
+    }
+
+    //引用
+    blockquote {
+
+        background: #F8F8F8;
+        padding: 25px 30px 25px 70px;
+        position: relative;
+
+        &::before {
+            content: '\f10d';
+            font: var(--fa-font-solid);
+            display: block;
+            position: absolute;
+            font-size: 28px;
+            color: #B4B4B4;
+            left: 20px;
+        }
+    }
+
+    //テーブル
+    table {
+
+        width: 100%;
+        background: #F8F8F8;
+
+        thead {
+
+            width: 100%;
+
+            tr {
+                display: flex;
+                width: 100%;
+
+                th {
+                    &:nth-child(1){
+                        flex: 0 0 15%;
+
+                        @include min.breakpoint(tablet) {
+                            flex: 0 0 15%;
+                            text-align: left;
+                        }
+                    }
+    
+                    &:nth-child(2) {
+                        flex: 0 0 20%;
+
+                        @include min.breakpoint(tablet) {
+                            flex: 0 0 15%;
+                            text-align: left;
+                        }
+                    }
+    
+                    &:nth-child(3) {
+                        flex: 1 1 50%;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            
+            tr {
+                display: flex;
+                width: 100%;
+                text-align: left;
+
+                &:nth-child(odd) {
+                    background: #F0F0F0;
+                }
+    
+                th {                   
+                    flex: 0 0 20%;
+
+                    @include min.breakpoint(tablet) {
+                        flex: 0 0 15%;
+                    }
+                }
+    
+                td:nth-child(2) {
+                    flex: 0 0 25%;
+
+                    @include min.breakpoint(tablet) {
+                        flex: 0 0 15%;
+                    }
+                }
+
+                td:nth-child(3) {
+                    flex: 1;
+                }
+            }
+        }
+    }
+
+    //データリスト
+    dl {
+        dt, dd {
+            margin-bottom: 5px;
+        }
+    }
+
+    //リスト
+    ul {
+        padding-left: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        li {
+            position: relative;
+            padding-left: 5px;
+            
+            &::before {
+                border-radius: 50%; /*丸くする*/
+                width: 8px; /*点の幅*/
+                height: 8px; /*点の高さ*/
+                display: block;
+                position: absolute; /*絶対配置*/
+                left: -10px; /*点の位置*/
+                top: 6px;
+                content: "";
+                background: var.$bg-accent; /*点の色*/
+                margin-right: 5px;
+            }
+        }
+    }
+
+    //順序リスト
+    ol {
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        list-style-type: none;
+        counter-reset: my-counter;
+
+        ul {
+            list-style-type: unset;
+        }
+
+        li {
+            position: relative;
+            padding-left: 5px;
+            
+            &::before {
+                content: counter(my-counter);
+                counter-increment: my-counter;
+
+                border-radius: unset; /*丸くする*/
+                width: unset; /*点の幅*/
+                height: unset; /*点の高さ*/
+                display: unset;
+                position: unset; /*絶対配置*/
+                left: unset; /*点の位置*/
+                top: unset;
+                // content: "";
+                background: unset; /*点の色*/
+                margin-right: unset;
+                width: unset; /*点の幅*/
+                height: unset; /*点の高さ*/
+                display: unset;
+                position: unset; /*絶対配置*/
+                left: unset; /*点の位置*/
+                top: unset;
+                // content: "";
+                background: unset; /*点の色*/
+                margin-right: unset;
+            }
+        }
+    }
+
+    //リンク
+    a {
+        color: var.$bg-accent;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    pre {
+        padding: 20px;
+        background: #F0F0F0;
+        overflow-x: scroll;
+    }
+
+    code {
+        background: #F8F8F8;
+    }
+
+    img {
+        display: unset;
+    }
+
+    //画像　テキスト回り込み配置
+    //画像左
+    .alignleft {
+        display: inline-block;
+        float: left;
+        margin-right: 20px;
+
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+    //画像右
+    .alignright {
+        display: inline-block;
+        float: right;
+        margin-left: 20px;
+
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+    //画像中央
+    .aligncenter {
+        display: block;
+        margin: 0 auto;
+    }
+    .alignnone {
+        width: 100% !important;
+    }
+} 

@@ -1,0 +1,41 @@
+@use "../../foundation/mixins" as min;
+@use "../../foundation/variables" as var;
+
+.p-successStory {
+
+    background-color: var.$bg-main;
+    padding-top: 58px;
+    padding-bottom: 80px;
+
+    @include min.breakpoint(tablet) {
+        padding-bottom: 136px;
+    }
+
+    @include min.breakpoint(pc) {
+        padding-bottom: 74px;
+    }
+
+    .successTitle {
+        color: var.$text-white;
+        text-align: center;
+        margin-bottom: 60px;
+
+        @include min.breakpoint(pc) {
+            margin-bottom: 137px;
+        }
+    }
+
+    .successContents {
+        
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+
+        @include min.breakpoint(tablet) {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}

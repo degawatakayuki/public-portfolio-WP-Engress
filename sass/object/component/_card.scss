@@ -1,0 +1,487 @@
+@use  "../../foundation/variables" as var;
+@use  "../../foundation/mixins" as min;
+
+.c-card {
+    //会社の強み
+    &.advantage {
+        display: block;
+        position: relative;  
+        width: 100%;
+        height: 100%;
+
+        @include min.breakpoint(tablet) {
+            display: flex;
+        }
+
+        picture {
+            width: 100%;
+            height: 100%;
+            flex: 0 0 40%;
+
+            @include min.breakpoint(tablet) {
+                order: 1;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+
+                @include min.breakpoint(tablet) {
+                    height: 260px;
+                }
+
+                @include min.breakpoint(pc) {
+                    height: 260px;
+                }
+            }
+        }
+
+        .advantageContent {
+            position: absolute;
+            top: 0;
+            z-index: 100;
+            padding: 30px 20px;
+            height: auto;
+
+            @include min.breakpoint(tablet) {
+                position: unset;
+                width: 55%;
+                margin-right: 5%;
+                padding: unset;
+            }
+
+            .tag {
+                display: inline-block;
+                padding: 5px 20px;
+                color: var.$text-white;
+                background-color: var.$bg-accent;
+                font: normal normal 500 12px/20px "YuGothic";
+                margin-bottom: 20px;
+
+                @include min.breakpoint(tablet) {
+                    margin-bottom: 15px;
+                }
+
+                @include min.breakpoint(pc) {
+                    margin-bottom: 35px;
+                }
+            }
+
+            .contentTitle {
+                color: var.$text-white;
+                margin-bottom: 40px;
+
+                @include min.breakpoint(tablet) {
+                    margin-bottom: 15px;
+                    color: var.$text-main;
+                }
+
+                @include min.breakpoint(pc) {
+                    margin-bottom: 39px;
+                }
+            }
+
+            .text {
+                color: var.$text-white;
+                font-weight: 500;
+
+                @include min.breakpoint(tablet) {
+                    color: var.$text-main;
+                }
+            }
+            
+        }
+
+        &.reverse {
+            flex-direction: row-reverse;
+
+            .advantageContent {
+                @include min.breakpoint(tablet) {
+                    margin-left: 5%;
+                    margin-right: unset;
+                }
+            }
+
+            
+        }
+    }
+    //成功例
+    &.success {
+
+        margin-bottom: 50px;
+
+        @include min.breakpoint(tablet) {
+            width: 32%;
+        }
+        
+        .comment {
+            font: normal normal bold 16px/29px "YuGothic";
+            color: var.$text-white;
+            font-weight: bold;
+            line-height: 1.8;
+            margin-bottom: 15px;
+
+            @include min.breakpoint(tablet) {
+                margin-bottom: 10px;
+                height: 100px;
+            }
+
+            @include min.breakpoint(pc) {
+                height: 60px;
+            }
+        }
+
+        .successBlock {
+            display: block;
+            width: 100%;
+            height: 150px;
+            background-color: var.$bg-white;
+            position: relative;
+
+            @include min.breakpoint(tablet) {
+                height: 170px;
+            }
+
+            @include min.breakpoint(pc) {
+                height: 200px;
+            }
+
+            img {
+                position: absolute;
+                left: 8%;
+                bottom: 0;
+                width: 130px;
+                height: 130px;
+
+                @include min.breakpoint(tablet) {
+                    width: 153px;
+                    height: 156px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                @include min.breakpoint(pc) {
+                    width: 183px;
+                    height: 186px;
+                }
+            }
+        }
+
+        .successContent {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+
+            @include min.breakpoint(tablet) {
+
+                top:180px;
+                left: 0;
+                right: 0;
+            }
+
+            @include min.breakpoint(pc) {
+                top: 210px;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .position, .name, .score {
+                display: block;
+                font-weight: 500;
+                font: normal normal 500 16px/29px "YuGothic";
+                line-height: 1.5;
+                background: #F8F8F8;
+                margin-bottom: 5px;
+                padding: 5px 15px;
+
+                @include min.breakpoint(pc) {
+                    display: inline-block;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .position {
+                @include min.breakpoint(pc) {
+                    width: 30%;
+                    margin-right: 10%;
+                }
+            }
+
+            .name {
+                @include min.breakpoint(pc) {
+                    width: 60%;
+                }
+            }
+
+            .score {
+                @include min.breakpoint(pc) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    //ご利用の流れ
+    &.useFlow {
+        display: flex;
+        height: 120px;
+        position: relative;
+        background-color: #F8F8F8;
+        margin-bottom: 8px;
+
+        @include min.breakpoint(tablet) {
+            height: 100px;
+            width: 100%;
+            height: 64px;
+        }
+
+        .numberBlock {
+            display: block;
+            flex: 0 0 15%;
+            height: 100%;
+            
+            text-align: center;
+            background-color: var.$bg-accent;
+            color: var.$text-white;
+            font-weight: bold;
+            padding-top: 42px;
+            padding-bottom: 42px;
+            font: normal normal bold 16px/29px "YuGothic";
+            line-height: 2.5;
+
+            @include min.breakpoint(tablet) {
+                max-width: 64px;
+                height: 64px;
+                padding-top: 24px;
+                padding-bottom: 24px;
+                line-height: 1;
+            }
+        }
+
+        .flowContent {
+            padding: 5px 20px;
+
+            @include min.breakpoint(tablet) {
+                display: flex;
+                width: 100%;
+            }
+
+            .flowTitle {
+                font: normal normal bold 18px/40px "YuGothic";
+
+                @include min.breakpoint(tablet) {
+                    border-right: 1px solid #C3C3C3;
+                }
+                
+                @include min.breakpoint(tablet) {
+                    border-right: 1px solid #C3C3C3;
+                    display: inline-block;
+                    
+                    align-self: center;
+                    flex: 0 0 180px;
+                    line-height: 1;
+                    padding-top: 16px;
+                    padding-bottom: 16px;
+                }
+            }
+
+            .flowText {
+                font-weight: 500;
+
+                @include min.breakpoint(tablet) {
+                    align-self: center;
+                    flex: 1 1 100%;
+                    margin-left: 25px;
+                }
+            }
+        }
+
+        &:last-of-type {
+            margin-bottom: unset;
+        }
+    }
+
+    //ブログ
+    &.blogContents {
+        display: flex;
+        margin-bottom: 31px;
+        height: 110px;
+
+        &:last-of-type {
+            margin-bottom: unset;
+        }
+
+        picture {
+            display: block;
+            position: relative;
+            flex: 0 0 40%;
+            max-width: 150px;
+
+            @include min.breakpoint(tablet) {
+                height: auto;
+            }
+
+            img {
+                width: 100%;
+                height: 110px;
+            }
+
+            .category {
+                display: inline-block;
+                background-color: var.$bg-main;
+                color: var.$text-white;
+                padding: .3rem .6rem;
+                position: absolute;
+                font: normal normal 500 12px/12px "YuGothic";
+
+                @include min.breakpoint(tablet) {
+                    padding: .5rem 1rem;
+                }
+            }
+        }
+
+        .blogContent {
+            display: flex;
+            flex: 1;
+            margin-left: 3%;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .blogLink {
+                display: block;
+                font: normal normal bold 16px/27px "YuGothic";
+                text-decoration: underline;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .blogDate {
+                font-size: 0.75rem;
+                font-weight: 500;
+                margin-top: auto;
+            }
+        }
+    }
+    //料金表
+    &.chart {
+        display: block;
+        border: 1px solid var.$bg-main;
+        flex: 0 0 47%;
+        margin-right: 7px;
+        margin-top: 40px;
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+
+        @include min.breakpoint(tablet) {
+            flex: 0 0 31%;
+        }
+
+        @include min.breakpoint(pc) {
+            flex: 0 0 20%;
+        }
+
+        &:last-of-type {
+            margin-right: unset;
+        }
+
+        .planTitle {
+            text-align: center;
+            font: normal normal bold 16px/35px "YuGothic";
+            height: 60px;
+            padding-top: 12.5px;
+            padding-bottom: 12.5px;
+            color: var.$text-white;
+            background-color: var.$bg-main;
+            width: calc(100% + 1px);
+        }
+
+        .planContent {
+            text-align: center;
+            padding: 1.5rem .3rem;
+
+            @include min.breakpoint(tablet) {
+                padding: 2rem 1rem;
+            }
+
+            .planPrice {
+                font: normal normal bold 25px/40px "YuGothic";
+                margin-bottom: 48px;
+
+                span {
+                    display: block;
+                    font: normal normal 500 16px/27px "YuGothic";
+                }
+            }
+
+            .planRemarks {
+                font: normal normal 500 16px/27px "YuGothic";
+
+                p {
+                    margin-bottom: 10px;
+
+                    @include min.breakpoint(tablet) {
+                        margin-bottom: 23px;
+                    }
+
+                    &::before {
+                        content: '\f105';
+                        font: var(--fa-font-solid);
+                        padding-right: 5px;
+                    }
+
+                    &:last-of-type {
+                        margin-bottom: unset;
+                    }
+                }             
+
+                .notes {
+                    
+                    &::before {
+                        content: '';
+                    }
+                }
+            }
+        }
+
+        &.recommendation {
+
+            margin-top: 0;
+            position: relative;
+
+            .planTitle {
+                display: block;
+                background-color: var.$bg-accent;
+                height: 100px;
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                right: -1px;
+                width: calc(100% + 2px);
+                border: 1px solid var.$bg-accent;
+
+                span {
+                    display: block;
+                    color: var.$text-white;
+                    background-color: var.$bg-accent;
+                }
+            }
+
+            .planPrice {
+
+                .recommendationPrice{
+                    font: normal normal bold 25px/40px "YuGothic";
+                    color: var.$bg-accent;
+                }
+            }
+
+            .planContent {
+                margin-top: 100px;
+            }
+        }
+    }
+}

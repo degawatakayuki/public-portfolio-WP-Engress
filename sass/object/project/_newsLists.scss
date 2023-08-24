@@ -1,0 +1,49 @@
+@use "../../foundation/mixins" as min;
+.p-newsLists {
+
+    margin-top: 58px;
+    margin-bottom: 40px;
+
+    .newsListsContainer {
+        
+        .newListTitle {
+            font: normal normal bold 32px/54px "YuGothic";
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .newsList {
+
+            li {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                border-top: 1px solid #F8F8F8;
+
+                @include min.breakpoint(tablet) {
+                    padding-top: 1.5rem;
+                    padding-bottom: 1.5rem;
+                }
+                
+                &:last-of-type {
+                    border-bottom: 2px solid #F8F8F8;
+                }
+
+                .newsDate {
+                    display: block;
+                    width: 150px;
+                    margin-bottom: 10px;
+                    font: normal normal 500 16px/24px "YuGothic";
+                    
+                    @include min.breakpoint(tablet) {
+                        display: inline-block;
+                        margin-bottom: unset;
+                    }
+                }
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,105 @@
+@use  "../foundation/mixins" as min;
+@use  "../foundation/variables" as var;
+
+.headerContainer {
+
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    background-color: var.$bg-white;
+    z-index: 1000;
+
+    .headerLeft {
+
+        margin-left: 1%;
+        display: flex;
+        flex-basis: 25%;
+
+        @include min.breakpoint(pc) {
+            flex-basis: 49%;
+        }
+
+        .headerLogo {
+
+            flex: 0 0 136px;
+            margin-right: 1%;
+            height: auto;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .headerNav-pc {
+            display: none;
+
+            @include min.breakpoint(pc) {
+                display: block;
+                vertical-align: middle;
+
+                ul {
+                    display: flex;
+                    align-items: center;
+                    overflow: hidden;
+
+                    li > a {
+                        padding: .2rem .5rem;
+                        line-height: 2;
+                        font: normal normal bold 16px/29px "YuGothic";
+                    }
+
+                    a {
+                        align-self: center;
+                    } 
+                }
+            }
+        }
+    }
+
+    .headerRight {
+
+        margin-right: 1%;
+        display: flex;
+        align-items: center;
+
+        .company-tell {
+            display: none;
+            text-align: right;
+            margin-right: 20px;
+
+            @include min.breakpoint(tablet) {
+                display: block;
+            }
+
+            .supportTime {
+                font: normal normal 500 12px/20px "YuGothic";
+            }
+
+            .supportCall {
+                font-weight: bold;
+
+                i {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .headerEnquiry {
+            
+            display: none;
+
+            @include min.breakpoint(tablet) {
+                display: block;
+            }
+
+            a {
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+.p-sns {
+    margin-bottom: 180px;
+
+    @include min.breakpoint(tablet) {
+        margin-bottom: 80px;
+    }
+
+    @include min.breakpoint(pc) {
+        margin-bottom: 119px;
+    }
+
+    .snsContainer {
+
+        display: flex;
+        flex-direction: column;
+        
+        @include min.breakpoint(tablet) {
+            flex-direction: row;
+            // margin-bottom: 119px;
+        }
+
+        .blogBlock {
+
+            margin-bottom: 50px;
+
+            @include min.breakpoint(tablet) {
+                width: 48%;
+                margin-right: 4%;
+                margin-bottom: unset;
+            }
+
+            .blogTitle {
+                font: normal normal bold 32px/54px "YuGothic";
+                margin-bottom: 30px;
+                text-align: center;
+
+                @include min.breakpoint(tablet) {
+                    text-align: left;
+                }
+            } 
+        }
+
+        .infoBlock {
+
+            @include min.breakpoint(tablet) {
+
+            }
+
+            .infoTitle {
+                font: normal normal bold 32px/54px "YuGothic";
+                margin-bottom: 30px;
+                text-align: center;
+
+                @include min.breakpoint(tablet) {
+                    text-align: left;
+                }
+            } 
+
+            ul > li {
+
+                margin-bottom: 50px;
+
+                span {
+                    display: block;
+                    font: normal normal 500 12px/20px "YuGothic";
+                    margin-bottom: 16px;
+                }
+
+                a {
+                    font-weight: 500;
+                    text-decoration: underline;text-decoration: underline;
+                }
+            }
+        }
+    }
+}

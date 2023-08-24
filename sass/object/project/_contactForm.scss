@@ -1,0 +1,204 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.p-contactForm {
+    max-width: 780px;
+    margin: 58px auto 82px;
+
+    .contactFormContainer {
+
+        .contactText {
+            font: normal normal 500 16px/27px "YuGothic";
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            font: normal normal 500 16px/27px "YuGothic";
+            margin-bottom: 41px;
+        }
+
+        .contactReply {
+            text-align: center;
+        }
+
+        .contactHome {
+            display: block;
+            margin-top: 83px;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        form {
+
+            .form-item {
+
+                input, textarea {
+                    margin-top: 12px;
+                    margin-bottom: 20px;
+                    border: 0.5px solid #1B224C;
+                    padding: 10px 20px;
+                    width: 100%;
+                }
+
+                textarea {
+                    margin-bottom: 30px;
+                }
+                
+                p:nth-child(-n + 8) {
+                    input {
+                        height: 50px;
+                    }
+                }
+    
+                h3 {
+                    margin-top: 20px;
+    
+                    &:nth-child(9) {
+                        margin-bottom: 20px;
+                    }
+        
+                    &:nth-child(11) {
+                        margin-top: 20px;
+                    }
+                }
+    
+                a {
+                    color: var.$bg-accent;
+                    text-decoration: underline;
+                }
+    
+                textarea {
+                    width: 100%;
+                    height: 240px;
+                    margin-bottom: 30px;
+                }
+
+                input[type="radio"] {
+                    width: 20px;
+                    height: 20px;
+                    margin: 0 19px 18px 0;
+                    padding: 0;
+                }
+
+                input[type="checkbox"] {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 15px;
+                }
+
+                .contactTypeContainer {
+
+                    margin-bottom: 26px;
+
+                    span.mwform-radio-field-text {
+                        vertical-align: top;
+                        display: inline-block;
+                        line-height: 1.25;
+                    }
+
+                    label {
+                        display: block;
+                        height: 20px;
+                        margin-bottom: 18px;
+                    }
+                }
+ 
+                .error {
+                    margin-bottom: 30px;
+                }
+
+                .contactType {
+                    display: inline-block;
+                }
+
+                .mwform-radio-field.horizontal-item {
+                    display: block;
+                }
+
+                .horizontal-item + .horizontal-item {
+                    margin-left: 0;
+                }
+                
+                .inquiry {
+                    display: block;
+                    margin-bottom: 21px;
+                }
+            }
+
+            .tel-item {
+                margin-bottom: 24px;
+
+                &> input[type="text"] {
+                    margin-bottom: unset;
+                }
+            }
+
+            .policy {
+                display: block;
+                text-align: center;
+                margin-bottom: 33px;
+
+                & > a {
+                    color: var.$bg-accent;
+                    text-decoration: underline;
+                }
+            }
+
+            .policyCheck {
+                display: block;
+                text-align: center;
+                margin-bottom: 48px;
+                height: 20px;
+
+                label {
+                    display: block;
+                    height: 100%;
+
+                    input[type="checkbox"] {
+                        width: 20px;
+                        height: 20px; 
+                        margin-right: 15px;
+                    }
+
+                    .mwform-checkbox-field-text {
+                        display: inline-block; 
+                        height: 100%;
+                        vertical-align: top;
+                        line-height: 1.25;
+                    }
+                }        
+            }
+
+            .formSubmit {
+                display: block;
+                width: 200px;
+                height: 50px;
+                margin: 0 auto;
+                border-radius: 5px;
+ 
+                & > input {
+                    color: var.$text-white;
+                    background: var.$bg-main;
+                    border: none;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 5px;
+                }
+            } 
+        }   
+
+        .returnLink {
+            display: block;
+            text-align: center;
+            margin-top: 83px;
+            text-decoration: underline;
+        }
+
+        input[type="submit"] {
+            background: var.$bg-main;
+            color: var.$text-white;
+            border: none;
+            padding: .8rem 3rem;
+        }
+    }
+}

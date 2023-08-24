@@ -1,0 +1,142 @@
+@use "../foundation/variables" as var;
+@use "../foundation/mixins" as min;
+
+.l-2columnContainer {
+
+    margin-top: 60px;
+    margin-bottom: 69px;
+    display: flex;
+    flex-direction: column;
+
+    @include min.breakpoint(pc) {
+        flex-direction: row;
+    }
+
+    .mainSide {
+
+        flex: 1;
+        overflow-x: hidden;
+
+        @include min.breakpoint(pc) {
+            flex: 0 0 65%;
+            margin-right: 5%;
+        }
+
+        &.fullScreen {
+            flex: 1;
+        }
+    }
+
+    .sidebar {
+
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        @include min.breakpoint(tablet) {
+            flex-direction: row;
+        }
+
+        @include min.breakpoint(pc) {
+            display: block;
+            flex: 0 0 30%;
+        }
+
+        .articleTitle {
+            display: block;
+            width: 100%;
+            background: var.$bg-main;
+            color: var.$text-white;
+            text-align: center;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            margin-bottom: 30px;
+            font: normal normal bold 21px/39px 'YuGothic';
+        }
+
+        .relatedArticle {
+            flex: 0 0 50%;
+
+            @include min.breakpoint(tablet) {
+                margin-right: 5%;
+            }
+
+            @include min.breakpoint(pc) {
+                 margin-right: unset;
+            }
+        }
+
+        .categoryArticle {
+            flex: 1;
+        }
+
+        .relatedList  {
+
+            padding-bottom: 50px;
+
+            li {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 42px;
+
+                @include min.breakpoint(tablet) {
+                    flex-direction: row;
+                }
+
+                &:last-of-type {
+                    margin-bottom: unset;
+                }
+    
+                picture {
+                    width: 240px;
+                    height: 180px;
+                    margin-bottom: 10px;
+
+                    @include min.breakpoint(tablet) {
+                        width: 150px;
+                        height: 120px;
+                        margin-right: 15px;
+                        margin-bottom: unset;
+                    }
+
+                    img {
+                        width: inherit;
+                        height: inherit;
+                    }
+                }
+
+                a {
+                    font: normal normal 500 12px/24px "YuGothic";
+                    list-style: circle;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .categoryList {
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            @include min.breakpoint(pc) {
+                display: block;
+            }
+
+            li {
+                list-style-type: disc;
+                list-style-position: inside;
+                width: 50%;
+
+                a {
+                    font: normal normal bold 12px/35px "YuGothic";
+
+                    @include min.breakpoint(pc) {
+                        font: normal normal bold 16px/39px "YuGothic";
+                    }
+                }
+            }
+        }
+    }
+}

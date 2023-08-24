@@ -1,0 +1,61 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.p-planSystem {
+    padding-top: 58px;
+    padding-bottom: 90px;
+
+    .planSystemContainer {
+
+        .systemTitle {
+            text-align: center;
+            margin-bottom: 40px;
+            font: normal normal bold 32px/54px "YuGothic";
+
+            @include min.breakpoint(tablet) {
+                margin-bottom: 60px;
+            }
+        }
+
+        .priceSystem {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 45px;
+
+            .membership, .monthly {
+                width: 280px;
+                height: 120px;
+                background-color: var.$bg-main;
+                color: var.$text-white;
+                font: normal normal bold 22px/35px "YuGothic";
+                text-align: center;
+                padding: 42px 0;
+                line-height: 1.8;
+
+                @include min.breakpoint(tablet) {
+                    height: 90px;
+                    padding: 34px 0;
+                    line-height: 1;
+                }
+            }
+
+            .membership {
+                padding: 23px 0;
+
+                @include min.breakpoint(tablet) {
+                    padding: 34px 0;
+                }
+            }
+
+            .plusIcon {
+                font: normal normal bold 48px/64px "YuGothic";
+                align-self:center;
+                margin: 0 30px;
+            }
+        }
+
+        p {
+            font: normal normal 500 16px/27px "YuGothic";
+        }
+    }
+}

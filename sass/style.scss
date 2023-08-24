@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@use "foundation/_mixins";
+@use "foundation/_variables";
+@use "foundation/_reset.scss"; 
+@use "foundation/_base.scss";
+
+@use "layout/_header.scss";
+@use "layout/_footer.scss";
+@use "layout/_sidebar.scss";
+
+@use "object/component/button";
+@use "object/component/hamburger";
+@use "object/component/card";
+@use "object/component/accordion";
+@use "object/component/pager";
+@use "object/component/wp-userDesign";
+@use "object/component/breadcrumb";
+
+@use "object/project/mainVisual";
+@use "object/project/mainCatch";
+@use "object/project/advantage";
+@use "object/project/successStory";
+@use "object/project/useFlow";
+@use "object/project/question";
+@use "object/project/sns";
+@use "object/project/contact";
+@use "object/project/subVisual";
+@use "object/project/planSystem";
+@use "object/project/planChart";
+@use "object/project/blogLists";
+@use "object/project/newsLists";
+@use "object/project/contactForm";
+@use "object/project/blogDetail";
+@use "object/project/undefinepage";
+@use "object/project/blogSuggest";

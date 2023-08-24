@@ -1,0 +1,72 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.c-headerButton {
+    display: inline-block;
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var.$text-white;
+    border-radius: 5px;
+    border: none;
+    font: normal normal bold 14px/24px "YuGothic";
+    text-align: center;
+    padding-top: 13px;
+    padding-bottom: 13px;
+
+    @include min.breakpoint(pc) {
+        width: 142px;
+    }
+}
+
+.documentRequest {
+
+    background-color: var.$bg-accent;
+    margin-right: 10px;
+}
+
+.contact {
+
+    background-color: var.$bg-main;
+    
+    @include min.breakpoint(pc) {
+        width: 137px;
+    }
+}
+
+.c-visualButton {
+
+    display: block;
+    width: 220px;
+    height: 48px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 22px;
+    
+    @include min.breakpoint(tablet) {
+        height: 60px;
+        width: 260px;
+    }
+
+    a {
+        display: inline-block;
+        color: var.$text-white;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        width: 220px;
+        background-color: var.$bg-accent;
+        border-radius: 30px;
+        cursor: pointer;
+        text-decoration: none;
+        font: normal normal bold 16px/29px 'YuGothic';
+
+        @include min.breakpoint(tablet) {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            width: 260px;
+            background-color: var.$bg-accent;
+            border-radius: 24px;
+        }
+    }
+}

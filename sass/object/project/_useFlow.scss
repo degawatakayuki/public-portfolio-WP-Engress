@@ -1,0 +1,15 @@
+@use "../../foundation/variables" as var;
+
+.p-useFlow {
+
+    margin-top: 58px;
+    margin-bottom: 75px;
+
+    .useFlowContainer {
+
+        .useFlowTitle {
+            text-align: center;
+            margin-bottom: 53px;
+        }
+    }
+}

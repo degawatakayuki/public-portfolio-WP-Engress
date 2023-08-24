@@ -1,0 +1,178 @@
+@use "../foundation/variables" as var;
+@use "../foundation/mixins" as min;
+
+footer {
+
+    background-color: var.$bg-main;
+
+    .footerContainer {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 68px;
+
+        @include min.breakpoint(tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: unset;
+        }
+
+        .footerNav {
+
+            margin-top: 49px;
+            margin-bottom: 50px;
+            width: 100%;
+
+            @include min.breakpoint(tablet) {
+                width: 45%;
+            }
+
+            @include min.breakpoint(pc) {
+                width: 60%;
+                align-self:flex-start;
+            }
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                
+                @include min.breakpoint(pc) {
+                    width: 100%;
+                    flex-wrap: nowrap;
+                }
+
+                li {
+
+                    width: 45%;
+                    text-align: center;
+                    margin-bottom: 20px;
+
+                    &:nth-of-type(odd) {
+                        border-right: 1px solid var.$bg-white;
+                    }
+
+                    @include min.breakpoint(pc) {
+
+                        width: 25%;
+                        border-right: 1px solid var.$bg-white;
+                    }
+
+                    a {
+
+                        color: var.$text-white;
+                        padding: .5rem 1rem;  
+                        font-weight: bold;
+
+                        @include min.breakpoint(tablet) {
+                            padding: .5rem .5rem;
+                        }
+
+                        @include min.breakpoint(pc) {
+                            padding: .5rem 1rem;
+                        }
+                    }
+
+                    &:last-of-type {
+
+                        @include min.breakpoint(pc) {
+                            border-right: unset;
+                        }
+                    }   
+                }
+            }
+        }
+
+        .footerRight {
+
+            display: flex;
+
+            @include min.breakpoint(pc) {
+
+                margin-top: 35px;
+                flex-direction: column;
+                margin-bottom: 35px;
+            }
+
+            picture {
+
+                display: block;
+                width: 45%;
+                height: 35px;
+                background-color: var.$bg-white;
+                padding: .5rem 1rem;
+                margin-right: 5%;
+                align-self: center;
+
+                @include min.breakpoint(tablet) {
+
+                    align-self: flex-start;
+                }
+
+                @include min.breakpoint(pc) {
+
+                    width: 100%;
+                    height: auto;
+                    padding: 1rem 2rem;
+                    align-self: unset;
+                    margin-bottom: 27px;
+                }
+
+                img {
+
+                    width: 100%;
+                }
+            }
+
+            .footerContent {
+
+                text-align: right;
+                
+                .footerTel {
+
+                    display: block;
+                    color: var.$text-white;
+                    
+
+                    a {
+                        color: var.$text-white;
+                        font-weight: bold;
+                    }
+                    img {
+                        width: 12px;
+                        height: 16px;
+                        display: inline-block;
+                        vertical-align:middle;
+
+                        @include min.breakpoint(tablet) {
+                            vertical-align:middle;
+                            width: unset;
+                            height: unset;
+                        }
+                    }
+                }
+    
+                .footerTime {
+                    color: var.$text-white;
+                    font: normal normal 500 12px/20px "YuGothic";
+                }
+            } 
+        }
+    }
+
+    .footerCopyright {
+
+        background-color: var.$bg-white;
+        height: 36px;
+        text-align: right;
+        
+        .copyRight {
+            
+            font: normal normal bold 12px/20px "YuGothic";
+            padding-top: 12px;
+            padding-bottom: 12px;
+            line-height: 1;
+        }
+    }
+}

@@ -1,0 +1,139 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.p-contact {
+
+    .contactContainer {
+        height: 200px;
+        position: relative;
+        margin-bottom: 160px;
+
+        @include min.breakpoint(tablet) {
+            margin-bottom: 90px;
+            height: 250px;
+        }
+
+        picture {
+            display: block;
+            height: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .contactContent {
+
+            display: block;
+            position: absolute;
+            top:30px;
+            left: 50%;
+            text-align: center;
+            margin: 0 auto;
+            transform: translateX(-50%);
+
+            @include min.breakpoint(tablet) {
+                top:40px;
+            }
+
+            .contactTitle {
+
+                display: block;
+                color: var.$text-white;
+                font: normal normal bold 24px/32px "YuGothic";
+                width: 300px;
+
+                @include min.breakpoint(tablet) {
+                    width: 500px;
+                    font: normal normal bold 32px/54px "YuGothic";
+                }
+            }
+
+            .footerRequest {
+
+                display: block;
+                width: 280px;
+                border: 1px solid var.$bg-accent;
+                color: var.$text-white;
+                padding: 8px 22px;
+                border-radius: 30px;
+                font-weight: bold;
+                margin: 16px auto 15px;
+                background-color: var.$bg-accent;
+
+                @include min.breakpoint(tablet) {
+                    padding: 16px 44px;
+                    border-radius: 50px;
+                }
+
+                &:hover {
+                    background-color: var.$bg-white;
+                    color: var.$text-main;
+                    border: 1px solid var.$bg-white;
+                }
+            }
+
+            .footerContact {
+                color: var.$text-white;
+                text-decoration: underline;
+            }
+        }
+
+        .telBlock {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-top: 21px;
+            margin-bottom: 21px;
+
+            @include min.breakpoint(tablet) {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .text {
+                font-weight: bold;
+                margin-bottom: 10px;
+                font-size: 0.875rem;
+
+                @include min.breakpoint(tablet) {
+                    flex: 0 0 30%;
+                    font-size: 1rem;
+                    margin-bottom: unset;
+                }
+            }
+
+            .tel {
+                
+                margin-bottom: 10px;
+                font: normal normal bold 28px/38px "YuGothic";
+
+                & > a {
+                    font: normal normal bold 28px/38px "YuGothic";
+                }
+
+                @include min.breakpoint(tablet) {
+                    
+                    font: normal normal bold 36px/50px "YuGothic";
+                    flex: 0 0 40%;
+                    margin: auto;
+                    
+                    & > a {
+                        font: normal normal bold 36px/50px "YuGothic";
+                    }
+                }
+            }
+
+            .time {
+                font-weight: 500;
+                font-size: 0.875rem;
+
+                @include min.breakpoint(tablet) {
+                    flex: 0 0 30%;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

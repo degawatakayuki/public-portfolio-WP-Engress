@@ -1,0 +1,16 @@
+@use  "../../foundation/variables" as var;
+@use  "../../foundation/mixins" as min;
+
+.p-question {
+    margin-bottom: 50px;
+
+    @include min.breakpoint(tablet) {
+        margin-bottom: 90px;
+        
+    }
+
+    .questionTitle {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+}

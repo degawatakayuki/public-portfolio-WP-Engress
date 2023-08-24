@@ -1,0 +1,75 @@
+@use  "../../foundation/mixins" as min;
+
+.c-accordion {
+    
+    .accordion__item {
+        
+        display: block;
+        border-top: 1px solid #1B224C;
+        cursor: pointer;
+
+        &:last-of-type {
+            border-bottom: 1px solid #1B224C;
+        }
+        
+        /* アコーディオン展開時の(-)アイコン */
+        &.is-active .accordion__title::before {
+            transform: rotate(180deg);
+        }
+
+        &.is-active .accordion__title::after {
+            transform: rotate(180deg);
+            /* opacity: 0; */
+        }
+
+        .accordion__content, .accordion__title {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            font: normal normal 500 16px/27px "YuGothic";
+        }
+
+        .accordion__title {
+            position: relative;
+            padding-right: 4rem;
+
+            @include min.breakpoint(tablet) {
+                padding-right: unset;
+            }
+
+            &::after, &::before {
+                content: "";
+                position: absolute;
+                right: 20px;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                background-color: #1B224C;
+                width: 20px;
+                height: 4px;
+                transition: all 0.3s;
+            }
+
+            &::after {
+                transform: rotate(90deg);
+            }
+        }
+
+        .accordion__content {
+            background-color: #F8F8F8;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            display: none;
+            cursor: pointer;
+
+            @include min.breakpoint(tablet) {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            &.is-open {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
